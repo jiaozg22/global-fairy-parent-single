@@ -30,7 +30,7 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.jzg.fairy.core</groupId>
+			<groupId>org.global.fairy</groupId>
 			<artifactId>global-fairy-core</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
