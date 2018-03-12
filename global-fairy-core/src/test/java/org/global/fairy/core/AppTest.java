@@ -1,5 +1,9 @@
 package org.global.fairy.core;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -33,6 +37,9 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+    	Map map = new  HashMap();
+    	Map<String,String> concurrenMap = new  ConcurrentHashMap<String,String>();
+
+    	assertTrue( true );
     }
 }
