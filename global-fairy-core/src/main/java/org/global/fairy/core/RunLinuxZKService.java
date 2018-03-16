@@ -10,7 +10,7 @@ public class RunLinuxZKService implements RunZKService {
 	@Override
 	public void runZKService() {
 		if (ViewOSUtil.isLinuxOS()) {
-			path = "." + ZKEnvConfig.getZookeeperHomeEnv() + "/bin/zkServer.sh";
+			path = ZKEnvConfig.getZookeeperHomeEnv() + "/bin/zkServer.sh start";
 		}else{
 			System.out.println("不是Linux系统");
 		}
