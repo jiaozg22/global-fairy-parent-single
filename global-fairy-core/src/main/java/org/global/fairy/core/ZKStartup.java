@@ -24,12 +24,12 @@ public class ZKStartup {
 		}
 
 		zkService.runZKService();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		zkService.stopZKService();
+//		try {
+//			Thread.sleep(5000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+//		zkService.stopZKService();
 	}
 
 	public static void stop() {
@@ -42,12 +42,12 @@ public class ZKStartup {
 			zkService = new RunLinuxZKService();
 		}
 
-		zkService.runZKService();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+//		zkService.runZKService();
+//		try {
+//			Thread.sleep(5000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		zkService.stopZKService();
 	}
 

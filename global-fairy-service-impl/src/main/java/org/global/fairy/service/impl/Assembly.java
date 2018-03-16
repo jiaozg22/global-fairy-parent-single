@@ -50,6 +50,6 @@ public class Assembly {
 
 	public static void main(String[] args) throws Exception {
 		startDubbo();
-		stopDubbo();
+		//stopDubbo();
 	}
 }
