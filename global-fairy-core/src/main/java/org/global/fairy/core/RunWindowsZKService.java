@@ -22,7 +22,7 @@ public class RunWindowsZKService {
 
 		if (ViewOSUtil.isLinuxOS()) {
 			System.out.println("linux操作系统");
-			path = ZOOKEEPER_HOME + "/bin/zkServer.sh";
+			path = "./" + ZOOKEEPER_HOME + "/bin/zkServer.sh";
 		}
 		System.out.println("zookeeper启动路径：" + path);
 		// String path =
