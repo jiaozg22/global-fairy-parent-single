@@ -2,7 +2,7 @@ package org.global.fairy.service.impl;
 
 import java.io.IOException;
 
-import org.global.fairy.core.RunWindowsZKService;
+import org.global.fairy.core.ZKStartup;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -12,8 +12,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Assembly {
 	private static boolean startZKService() {
 		boolean result = true;
+		
 		try {
-			RunWindowsZKService.runZKService();
+			ZKStartup.startup();
 		} catch (Exception e) {
 			System.out.println("自动启动zkservice失败。请手动开启zookeeper的服务！");
 			result = false;
@@ -44,7 +45,7 @@ public class Assembly {
 	}
 
 	public static void stopDubbo() {
-		RunWindowsZKService.stopZKService();
+		ZKStartup.stopZKService();
 	}
 
 	public static void main(String[] args) throws Exception {

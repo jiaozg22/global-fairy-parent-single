@@ -5,16 +5,17 @@ import java.io.IOException;
 
 public class CallExe {
 	
-	public static Process runCmd(String path){
+	public static Process runCmd(String cmd){
 		//path = "cmd.exe /c start d:/\"apache-zookeeper-3.4.8\"/bin\"/zkServer.cmd";
 		try {
-			return Runtime.getRuntime().exec(path);
+			return Runtime.getRuntime().exec(cmd);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
+			System.out.println("运行"+cmd+"命令失败");
 			return null;
 		}
     	
+		
 	}
 
     /**

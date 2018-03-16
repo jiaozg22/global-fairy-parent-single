@@ -5,32 +5,26 @@ import java.io.IOException;
 import org.global.fairy.core.utils.CallExe;
 import org.global.fairy.core.utils.ViewOSUtil;
 
-public class RunWindowsZKService {
+public class RunWindowsZKService implements RunZKService {
+	public Process ps = null;
+	public String path;
 
-	static Process ps = null;
-
-	public static void runZKService() {
-		String ZOOKEEPER_HOME_VALUE = "ZOOKEEPER_HOME";
-		String ZOOKEEPER_HOME = EnvGet.getEnvByKey(ZOOKEEPER_HOME_VALUE);
-		String path = "cmd.exe /c start " + ZOOKEEPER_HOME
-				+ "/bin/zkServer.cmd";
+	public void runZKService() {
 
 		if (ViewOSUtil.isWindowOS()) {
-			System.out.println("window操作系统");
-			path = "cmd.exe /c start " + ZOOKEEPER_HOME + "/bin/zkServer.cmd";
+			System.out.println("ZOOKEEPER_HOME" + ZKEnvConfig.getZookeeperHomeEnv());
+			path = "cmd.exe /c start " + ZKEnvConfig.getZookeeperHomeEnv() + "/bin/zkServer.cmd";
+		} else {
+			System.out.println("操作系统不是windows");
 		}
 
-		if (ViewOSUtil.isLinuxOS()) {
-			System.out.println("linux操作系统");
-			path = "./" + ZOOKEEPER_HOME + "/bin/zkServer.sh";
-		}
 		System.out.println("zookeeper启动路径：" + path);
 		// String path =
 		// "cmd.exe /c start d:/\"apache-zookeeper-3.4.8\"/bin\"/zkServer.cmd";
 		ps = CallExe.runCmd(path);
 	}
 
-	public static void stopZKService() {
+	public void stopZKService() {
 		int i = ps.exitValue();
 		if (i == 0) {
 			System.out.println("ZKService stop 执行完成.");
@@ -46,7 +40,7 @@ public class RunWindowsZKService {
 
 	}
 
-	public static void killProcess() {
+	public void killProcess() {
 		Runtime rt = Runtime.getRuntime();
 		try {
 			if (ViewOSUtil.isWindowOS()) {
@@ -56,12 +50,6 @@ public class RunWindowsZKService {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static void main(String[] args) throws InterruptedException {
-		runZKService();
-		Thread.sleep(5000);
-		stopZKService();
 	}
 
 }
