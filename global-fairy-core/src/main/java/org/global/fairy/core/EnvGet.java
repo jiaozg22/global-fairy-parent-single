@@ -15,9 +15,11 @@ public class EnvGet {
 				System.out.print(entry.getKey() + "=");
 				System.out.println(entry.getValue());
 				return entry.getValue().toString();
+			}else{
+				return "没有获取到环境变量key："+key+"的值";
 			}
 		}
-		return "没有配置环境变量：" + key;
+		return "没有读取到系统的环境变量配置" ;
 	}
 
 }
