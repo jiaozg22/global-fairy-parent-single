@@ -19,6 +19,12 @@ public class RunLinuxZKService implements RunZKService {
 		// "cmd.exe /c start d:/\"apache-zookeeper-3.4.8\"/bin\"/zkServer.cmd";
 		ps = CallExe.runCmd(cmd);
 		if(ps!=null){
+			try {
+				ps.waitFor();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			System.out.println("启动命令成功");
 		}
 	}
