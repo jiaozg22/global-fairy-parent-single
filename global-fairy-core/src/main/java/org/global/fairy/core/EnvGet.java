@@ -12,7 +12,8 @@ public class EnvGet {
 		while (it.hasNext()) {
 			
 			Entry entry = (Entry) it.next();
-			System.out.println(entry.getKey());
+			System.out.print(entry.getKey()+",");
+			System.out.println("待匹配值："+key);
 			if (entry.getKey().equals(key)) {
 				System.out.print(entry.getKey() + "=");
 				System.out.println(entry.getValue());
