@@ -18,6 +18,9 @@ public class RunLinuxZKService implements RunZKService {
 		// String path =
 		// "cmd.exe /c start d:/\"apache-zookeeper-3.4.8\"/bin\"/zkServer.cmd";
 		ps = CallExe.runCmd(cmd);
+		if(ps!=null){
+			System.out.println("启动命令成功");
+		}
 	}
 
 	@Override
