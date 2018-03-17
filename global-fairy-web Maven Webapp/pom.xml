@@ -6,6 +6,7 @@
 		<artifactId>global-fairy-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
+	<groupId>org.global.fairy</groupId>
 	<artifactId>global-fairy-web</artifactId>
 	<packaging>war</packaging>
 	<name>global-fairy-web Maven Webapp</name>
