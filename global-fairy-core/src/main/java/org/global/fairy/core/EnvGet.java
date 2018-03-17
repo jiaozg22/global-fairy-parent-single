@@ -15,8 +15,8 @@ public class EnvGet {
 //			System.out.print(entry.getKey()+",");
 //			System.out.println("待匹配值："+key);
 			if (entry.getKey().equals(key)) {
-				System.out.print(entry.getKey() + "=");
-				System.out.println(entry.getValue());
+//				System.out.print(entry.getKey() + "=");
+//				System.out.println(entry.getValue());
 				return entry.getValue().toString();
 			}
 		}
