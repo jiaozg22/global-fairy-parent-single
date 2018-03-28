@@ -2,6 +2,8 @@ package org.global.fairy.service.impl;
 
 import java.io.IOException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.global.fairy.core.ZKStartup;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -10,13 +12,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * 
  */
 public class Assembly {
+	private static final Logger logger = LogManager.getLogger("Assembly.class");
+	
 	private static boolean startZKService() {
 		boolean result = true;
 		
 		try {
 			ZKStartup.startup();
+			logger.info("自动启动zkservice成功！");
 		} catch (Exception e) {
-			System.out.println("自动启动zkservice失败。请手动开启zookeeper的服务！");
+			logger.error("自动启动zkservice失败。请手动开启zookeeper的服务！");
 			result = false;
 		}
 		return result;
@@ -30,7 +35,7 @@ public class Assembly {
 
 		context.start();
 
-		System.out.println("Press any key to exit.");
+		logger.info("Press any key to exit.");
 
 		try {
 			System.in.read();
@@ -50,6 +55,6 @@ public class Assembly {
 
 	public static void main(String[] args) throws Exception {
 		startDubbo();
-		//stopDubbo();
+		stopDubbo();
 	}
 }

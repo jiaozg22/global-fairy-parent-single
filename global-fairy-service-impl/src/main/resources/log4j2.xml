@@ -5,7 +5,7 @@
 		<property name="FILE_NAME">global-fairy-dubbo</property>
 	</properties>
 	<Appenders>
-		<Console name="Console" target="debug">
+		<Console name="Console" target="info">
 			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
 		</Console>
 		<RollingRandomAccessFile name="running-log"
@@ -29,15 +29,15 @@
 			<AppenderRef ref="running-log"/>
 		</Logger>
 
-		<Logger name="java.sql.Connection" level="debug">
+		<Logger name="java.sql.Connection" level="info">
 			<AppenderRef ref="running-log"></AppenderRef>
 		</Logger>
 
-		<Logger name="java.sql.Statement" level="debug">
+		<Logger name="java.sql.Statement" level="info">
 			<AppenderRef ref="running-log"></AppenderRef>
 		</Logger>
 
-		<Logger name="java.sql.PreparedStatement" level="debug">
+		<Logger name="java.sql.PreparedStatement" level="info">
 			<AppenderRef ref="running-log"></AppenderRef>
 		</Logger>
 

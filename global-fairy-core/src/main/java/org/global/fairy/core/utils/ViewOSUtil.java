@@ -2,6 +2,9 @@ package org.global.fairy.core.utils;
 
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 /**
  * 操作系统信息获取工具
  * 
@@ -9,6 +12,8 @@ import java.util.Properties;
  * 
  */
 public class ViewOSUtil {
+	private static final Logger logger = LogManager.getLogger("ViewOSUtil.class");
+	
 	/**
 	 * 获取操作系统的名字
 	 * 
@@ -17,7 +22,7 @@ public class ViewOSUtil {
 	public static String viewOSName() {
 		Properties prop = System.getProperties();
 		String osName = prop.getProperty("os.name");
-		System.out.println(osName);
+		logger.info(osName);
 		return osName;
 	}
 

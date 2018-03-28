@@ -1,9 +1,13 @@
 package org.global.fairy.core;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.global.fairy.core.utils.CallExe;
 import org.global.fairy.core.utils.ViewOSUtil;
 
 public class RunLinuxZKService implements RunZKService {
+	private static final Logger logger = LogManager.getLogger("RunLinuxZKService.class");
+	
 	public Process ps = null;
 	public String cmd;
 
@@ -12,7 +16,7 @@ public class RunLinuxZKService implements RunZKService {
 		if (ViewOSUtil.isLinuxOS()) {
 			cmd = ZKEnvConfig.getZookeeperHomeEnv() + "/bin/zkServer.sh start";
 		}else{
-			System.out.println("不是Linux系统");
+			logger.info("不是Linux系统");
 		}
 		System.out.println("zookeeper启动路径：" + cmd);
 		// String path =
@@ -24,8 +28,9 @@ public class RunLinuxZKService implements RunZKService {
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				logger.error(e.getMessage());
 			}
-			System.out.println("启动命令成功");
+			logger.info("启动命令成功");
 		}
 	}
 
@@ -34,7 +39,7 @@ public class RunLinuxZKService implements RunZKService {
 		if (ViewOSUtil.isLinuxOS()) {
 			cmd = ZKEnvConfig.getZookeeperHomeEnv() + "/bin/zkServer.sh stop";
 		}else{
-			System.out.println("不是Linux系统");
+			logger.info("不是Linux系统");
 		}
 		System.out.println("zookeeper关闭命令：" + cmd);
 		// String path =
@@ -47,9 +52,9 @@ public class RunLinuxZKService implements RunZKService {
 	public void killProcess() {
 		int i = ps.exitValue();
 		if (i == 0) {
-			System.out.println("ZKService stop 执行完成.");
+			logger.info("ZKService stop 执行完成.");
 		} else {
-			System.out.println("ZKService stop 执行失败.");
+			logger.info("ZKService stop 执行失败.");
 		}
 		ps.destroy();
 		ps = null;

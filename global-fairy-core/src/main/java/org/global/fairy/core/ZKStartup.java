@@ -1,5 +1,7 @@
 package org.global.fairy.core;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.global.fairy.core.utils.ViewOSUtil;
 
 /**
@@ -9,17 +11,19 @@ import org.global.fairy.core.utils.ViewOSUtil;
  * 
  */
 public class ZKStartup {
+	private static final Logger logger = LogManager.getLogger("ZKStartup.class");
+	
 	public static RunZKService zkService = null;
 
 	public static void startup() {
 
 		if (ViewOSUtil.isWindowOS()) {
-			System.out.println("window操作系统");
+			logger.info("window操作系统");
 			zkService = new RunWindowsZKService();
 		}
 
 		if (ViewOSUtil.isLinuxOS()) {
-			System.out.println("linux操作系统");
+			logger.info("linux操作系统");
 			zkService = new RunLinuxZKService();
 		}
 
@@ -34,7 +38,7 @@ public class ZKStartup {
 
 	public static void stop() {
 		if (ViewOSUtil.isWindowOS()) {
-			System.out.println("window操作系统");
+			logger.info("window操作系统");
 			zkService = new RunWindowsZKService();
 		}
 

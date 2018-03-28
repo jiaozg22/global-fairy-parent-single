@@ -24,6 +24,10 @@
             <configuration>
               <transformers>
                 <transformer>
+                  <resource>META-INF/spring.handlers</resource>
+                </transformer>
+                <transformer />
+                <transformer>
                   <mainClass>org.global.fairy.service.impl.Assembly</mainClass>
                 </transformer>
               </transformers>
