@@ -38,7 +38,8 @@ public class Assembly {
 		logger.info("Press any key to exit.");
 
 		try {
-			System.in.read();
+			int keyStr = System.in.read();
+			logger.info("Press key"+keyStr);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -55,6 +56,6 @@ public class Assembly {
 
 	public static void main(String[] args) throws Exception {
 		startDubbo();
-		stopDubbo();
+//		stopDubbo();
 	}
 }
