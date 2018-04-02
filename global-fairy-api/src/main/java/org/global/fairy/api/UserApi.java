@@ -15,12 +15,12 @@ public class UserApi {
 	@Resource
 	public IUserService userService;
 
-	public void sayHello() {
+	public void sayHello(String name) {
 		logger.info("into api");
 		User user = new User();
 		
 		user.setId(10000);
-		user.setName("jiao_zg");
+		user.setName(name);
 		userService.sayHello(user);
 	}
 

@@ -26,4 +26,13 @@ public class HelloWorld {
 		
 		return "HelloWorld";
 	}
+	
+	@RequestMapping(value = "/registor" , method= RequestMethod.POST)
+	@ResponseBody()
+	public String sayHello(){
+		logger.info("PRINT A MARK IN THE METHOD");
+		userApi.sayHello();
+		
+		return "HelloWorld";
+	}
 }
