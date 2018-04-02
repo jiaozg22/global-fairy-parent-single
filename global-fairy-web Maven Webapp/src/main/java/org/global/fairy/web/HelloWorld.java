@@ -23,6 +23,7 @@ public class HelloWorld {
 	public String sayHello(){
 		logger.info("PRINT A MARK IN THE METHOD");
 		userApi.sayHello();
+		
 		return "HelloWorld";
 	}
 }
