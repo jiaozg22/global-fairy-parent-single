@@ -23,6 +23,12 @@ public class UserApi {
 		user.setName(name);
 		userService.sayHello(user);
 	}
+	
+	public void addUser(User user) {
+		logger.info("into api");
+		
+		userService.sayHello(user);
+	}
 
 	
 }
