@@ -1,7 +1,12 @@
 # global-fairy-parent-single
 基于dubbo的微服务架构
-# jdk-version
-jdk1.7.0_51
+# 安装软件及版本
+jdk-version ：jdk1.7.0_51
+tomcat：apache-tomcat-7.0.63
+zookeeper：apache-zookeeper-3.4.8
+maven :　apache-maven-3.3.3
+activemq : apache-activemq-5.14.5
+redis : Redis-x64-3.0.500
 # 为了启用dubbo与zookeeper，请设置环境变量
 JAVA_HOME=JDK安装路径的环境变量值  
 
