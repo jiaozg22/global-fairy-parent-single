@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 public class EnvGet {
 
 	public static String getEnvByKey(String key) {
-		Map map = System.getenv();
+		Map<String,String> map = System.getenv();
 		Iterator it = map.entrySet().iterator();
 		while (it.hasNext()) {
 			
