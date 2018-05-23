@@ -61,7 +61,7 @@ public class RunLinuxZKService implements RunZKService {
 
 		// 批处理执行完后，根据cmd.exe进程名称
 		// kill掉cmd窗口
-		killProcess();
+		//killProcess();
 		
 	}
 
