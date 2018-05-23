@@ -52,6 +52,7 @@ public class Assembly {
 
 	public static void stopDubbo() {
 		ZKStartup.stopZKService();
+		Thread.currentThread().interrupt();
 	}
 
 	public static void main(String[] args) throws Exception {
