@@ -7,8 +7,8 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.global.fairy</groupId>
-  <artifactId>global-fairy-service-impl</artifactId>
-  <name>global-fairy-service-impl</name>
+  <artifactId>global-fairy-service</artifactId>
+  <name>global-fairy-service</name>
   <url>http://maven.apache.org</url>
   <build>
     <pluginManagement>
@@ -55,9 +55,6 @@
                   <resource>META-INF/spring.handlers</resource>
                 </transformer>
                 <transformer />
-                <transformer>
-                  <mainClass>org.global.fairy.service.impl.Assembly</mainClass>
-                </transformer>
               </transformers>
             </configuration>
           </execution>

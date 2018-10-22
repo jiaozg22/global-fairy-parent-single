@@ -9,14 +9,14 @@
 		name
 	</sql>
 	<!-- 查询语句 -->
-	<select id="getUser" resultType="User">
+	<select id="getUser" resultType="org.global.fairy.modules.dao.User">
 		select
 		<include refid="user" />
 		from user
 	</select>
 
 	<!-- 插入语句 -->
-	<insert id="insertUser" parameterType="user" useGeneratedKeys="true"
+	<insert id="insertUser" parameterType="org.global.fairy.modules.dao.User" useGeneratedKeys="true"
 		keyProperty="id">
 		<selectKey keyProperty="id" resultType="int" order="BEFORE">
 			select if(max(id) is null ,1,max(id) + 2) as newId from User
