@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/mui.min.css" />
+		<link rel="stylesheet" href="css/mtkj.css" />
+		<script type="text/javascript" src="js/mui.js"></script>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left public-color"></a>
+			<h1 class="mui-title">个人中心</h1>
+		</header>
+		<div class="mui-content">
+			<button id="reg">注册</button>
+			<button id="login">登录</button>
+
+		</div>
+	</body>
+	<script>
+		mui.init();
+		document.getElementById("reg").addEventListener('tap', function() {
+			mui.openWindow({
+				id: 'reg',
+				url: 'html/reg.html',
+				show: {
+					duration: 300
+				},
+				waiting: {
+					autoShow: true
+				}
+			});
+		});
+			document.getElementById("login").addEventListener('tap', function() {
+			mui.openWindow({
+				id: 'login',
+				url: 'html/login.html',
+				show: {
+					duration: 300
+				},
+				waiting: {
+					autoShow: true
+				}
+			});
+		});
+	</script>
+
+</html>

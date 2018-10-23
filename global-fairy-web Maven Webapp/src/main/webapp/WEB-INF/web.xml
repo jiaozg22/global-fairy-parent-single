@@ -68,15 +68,22 @@
 		<!-- Filter all resources -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
-
-
-	<!-- Spring MVC 的Servlet，它将加载WEB-INF/annomvc-servlet.xml 的配置文件，以启动Spring 
-		MVC模块 <servlet> <servlet-name>springmvc</servlet-name> <servlet-class>org.springframework.web.servlet.DispatcherServlet 
-		</servlet-class> <load-on-startup>0</load-on-startup> </servlet> <servlet-mapping> 
-		<servlet-name>springmvc</servlet-name> <url-pattern>*</url-pattern> </servlet-mapping> -->
+	
+	
+	<!--  Spring MVC 的Servlet，它将加载WEB-INF/annomvc-servlet.xml 的配置文件，以启动Spring 
+		MVC模块 --> 
+	<!-- <servlet>
+		<servlet-name>springmvc</servlet-name> 
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet 
+		</servlet-class> <load-on-startup>0</load-on-startup> 
+	</servlet>
+	<servlet-mapping> 
+		<servlet-name>springmvc</servlet-name> 
+		<url-pattern>*</url-pattern> 
+	</servlet-mapping>  -->
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 </web-app>
