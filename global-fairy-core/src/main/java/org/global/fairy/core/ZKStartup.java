@@ -46,7 +46,7 @@ public class ZKStartup {
 			zkService = new RunLinuxZKService();
 		}
 
-//		zkService.runZKService();
+		//zkService.runZKService();
 //		try {
 //			Thread.sleep(5000);
 //		} catch (InterruptedException e) {

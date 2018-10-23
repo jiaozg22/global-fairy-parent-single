@@ -268,8 +268,18 @@
 		</dependency>
 
 	</dependencies>
+	<!-- 多环境管理 <profiles> <profile> 本地开发环境 <id>dev</id> <properties> <profiles.active>dev</profiles.active> 
+		</properties> <activation> <activeByDefault>true</activeByDefault> </activation> 
+		</profile> <profile> 集成测试环境 <id>ci</id> <properties> <profiles.active>ci</profiles.active> 
+		</properties> </profile> <profile> 测试环境 <id>test</id> <properties> <profiles.active>test</profiles.active> 
+		</properties> </profile> <profile> 生产环境 <id>pro</id> <properties> <profiles.active>pro</profiles.active> 
+		</properties> </profile> </profiles> -->
 
 	<build>
+		<!-- <resources> <resource> <directory>src/main/resources</directory> 资源根目录排除各环境的配置，防止在生成目录中多余其它目录 
+			<excludes> <exclude>test/*</exclude> <exclude>ci/*</exclude> <exclude>pro/*</exclude> 
+			<exclude>dev/*</exclude> </excludes> </resource> <resource> <directory>src/main/resources/${profiles.active}</directory> 
+			</resource> </resources> -->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -304,6 +314,17 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+
+			<!-- 加载依赖模块的resources start -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<!-- 加载依赖模块的resources end -->
 		</plugins>
 
 		<pluginManagement>
@@ -342,6 +363,7 @@
 		<!-- <module>global-fairy-redis</module> <module>global-fairy-bigdata</module> 
 			<module>global-fairy-activemq</module> <module>global-fairy-cms</module> -->
 		<!-- <module>global-fairy-netty</module> <module>global-fairy-security</module> -->
+		<module>global-fairy-resources</module>
 	</modules>
 </project>
 

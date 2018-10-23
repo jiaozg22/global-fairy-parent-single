@@ -30,5 +30,10 @@ public class UserApi {
 		userService.sayHello(user);
 	}
 
+	public void registor(String string) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 }
