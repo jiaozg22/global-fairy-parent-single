@@ -32,3 +32,5 @@ MAVEN_HOME=maven安装路径的环境变量   ;(maven  environment)
 
 jar包存放路径：.m2/repository/org/global/fairy/global-fairy-service-impl/0.0.1-SNAPSHOT/global-fairy-service-impl-0.0.1-SNAPSHOT.jar
 (the path of the jar :.m2/repository/org/global/fairy/global-fairy-service-impl/0.0.1-SNAPSHOT/global-fairy-service-impl-0.0.1-SNAPSHOT.jar)
+# 项目架构图
+https://blog.csdn.net/jiao_zg/article/details/80228708
