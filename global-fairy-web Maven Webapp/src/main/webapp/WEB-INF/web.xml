@@ -37,6 +37,8 @@
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	
 
 	<!-- 浏览器不支持put,delete等method,由该filter将/xxx?_method=delete转换为标准的http delete方法 -->
 	<filter>
@@ -83,7 +85,7 @@
 	</servlet-mapping>  -->
 
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>MyApp/index.html</welcome-file>
 		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 </web-app>

@@ -24,7 +24,7 @@
                   <pluginExecutionFilter>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <versionRange>2.6</versionRange>
+                    <versionRange>2.1</versionRange>
                     <goals>
                       <goal>copy-dependencies</goal>
                     </goals>
