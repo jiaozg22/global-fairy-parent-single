@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/2002/xmlspec/dtd/2.10/xmlspec.dtd">
+<Configuration>
+
+
+	<appender name="dubboAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="E:/dubbo.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{MMdd HH:mm:ss SSS\} %-5p] [%t] %c{3\} - %m%n" />
+		</layout>
+	</appender>
+	<logger name="com.alibaba.dubbo" additivity="false">
+		<priority value="info" />
+		<appender-ref ref="dubboAppender" />
+	</logger>
+</Configuration>

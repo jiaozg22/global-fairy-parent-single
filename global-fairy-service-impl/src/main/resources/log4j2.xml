@@ -6,7 +6,7 @@
 	</properties>
 	<Appenders>
 		<Console name="Console" target="info">
-			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{5} - %msg%n" />
 		</Console>
 		<RollingRandomAccessFile name="running-log"
 			fileName="${LOG_HOME}/${FILE_NAME}.log"

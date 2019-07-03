@@ -32,3 +32,11 @@ MAVEN_HOME=maven安装路径的环境变量   ;(maven  environment)
 
 jar包存放路径：.m2/repository/org/global/fairy/global-fairy-service-impl/0.0.1-SNAPSHOT/global-fairy-service-impl-0.0.1-SNAPSHOT.jar
 (the path of the jar :.m2/repository/org/global/fairy/global-fairy-service-impl/0.0.1-SNAPSHOT/global-fairy-service-impl-0.0.1-SNAPSHOT.jar)
+
+# windows环境启动配置（伪分布式模式）：
+1)找到内网地址 例如 192.168.0.101
+2)找到系统名：例如 jzg 
+3)系统盘 C:\Windows\System32\drivers\etc\hosts文件，最后添加一条：内网ip 系统名 例如：192.168.0.101 jzg 
+4）将zookeeper的端口2181 添加到防火墙（或者关闭防火墙）
+
+# linux 同理
