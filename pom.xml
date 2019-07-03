@@ -368,5 +368,6 @@
     <module>global-fairy-db</module>
     <module>global-fairy-task</module>
     <!-- <module>global-fairy-security</module> -->
+    <module>global-fairy-redis</module>
   </modules>
 </project>
