@@ -20,7 +20,7 @@ import org.springframework.util.StringUtils;
  * @author: jiao_
  * @date: 2019年7月3日 下午10:25:34
  */
-@Repository
+@Repository("redisClusterCache")
 public class RedisClusterCacheImpl extends BaseRedisDaoImpl implements IRedisClusterCache {
 	
 	@Override
