@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../css/mtkj.css" />
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<style>
+				.mui-btn-block{
+				padding: 10px;
+				background:#5BD279;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left public-color"></a>
+			<h1 class="mui-title">注册</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-content-padded"></div>
+
+			<div class="mui-input-group" style="padding: 10px;">
+				<div class="mui-input-row">
+					<label>手机号</label>
+					<input id="phone" type="text" class="mui-input-clear mui-input" placeholder="请输入手机号" />
+				</div>
+				<div style="text-align: center;padding: 8px;">
+					<button class="mui-btn mui-btn-outlined mui-btn-positive" id="btnSendCode">发送验证码</button>
+				</div>
+				<!--style="text-align: right; padding-top: 5px;padding-right: 10px;"-->
+				<div class="mui-input-row">
+					<label>验证码</label>
+					<input id="validCode" type="text" id="" class="mui-input-clear mui-input"  placeholder="请输入验证码" />
+				</div>
+				<!--			style="border:solid 1px #CCCCCC; width: 80%;margin-left: 15px"
+-->
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input id="password" type="password" class="mui-input-password mui-input" placeholder="请输入密码" />
+				</div>
+				<!--<div class="inputlable">确认密码</div>-->
+				<div class="mui-input-row">
+					<label>确认密码</label>
+					<input id="password_confirm" type="password" class="mui-input-password mui-input" placeholder="确认密码" />
+				</div>
+
+			</div>
+			<div class="mui-input-group" style="margin: 20px;">
+				<button id="reg" class="mui-btn mui-btn-block">注册</button>
+			</div>
+		</div>
+	</body>
+	<script>
+		mui.init();
+		var phone = document.getElementById("phone");
+		var validCode = document.getElementById("validCode");
+		var password = document.getElementById("password");
+		var password_confirm = document.getElementById("password_confirm");
+		var myRegshouji = /^[0-9]{11}$/;
+		document.getElementById("btnSendCode").addEventListener('tap', function() {
+			if('' == phone.value || phone.value == null) {
+				return mui.toast("手机号码不能为空");
+			}
+			if(!myRegshouji.test(phone.value)) {
+				return mui.toast("手机号码不正确");
+			} else {
+				return mui.toast("手机号码正确");
+
+			}
+		});
+		document.getElementById("reg").addEventListener('tap', function() {
+			if('' == phone.value || phone.value == null) {
+				return mui.toast("手机号码不能为空");
+			} else if(!myRegshouji.test(phone.value)) {
+				return mui.toast("手机号码不正确");
+			} else if('' == validCode.value || validCode.value == null) {
+				return mui.toast("验证码不能为空");
+			} else if('' == password.value || password.value == null) {
+				return mui.toast("密码不能为空");
+			} else if('' == password_confirm.value || password_confirm.value == null) {
+				return mui.toast("确认密码不能为空");
+			} else if(password.value != password_confirm.value) {
+				return mui.toast("两次输入的密码不一致");
+			} else {
+				mui.toast("恭喜您！注册成功")
+
+			}
+		});
+
+		function checkoutData() {
+			if('' == password.value || password.value == null) {
+				return mui.toast("密码不能为空");
+			} else if('' == password_confirm.value || password_confirm.value == null) {
+				return mui.toast("确认密码不能为空");
+			} else if(password.value != password_confirm.value) {
+				return mui.toast("两次输入的密码不一致");
+
+			} else {
+				mui.toast("恭喜您！注册成功")
+
+			}
+		}
+	</script>
+
+</html>

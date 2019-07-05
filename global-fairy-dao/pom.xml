@@ -78,7 +78,8 @@
 									<pluginExecutionFilter>
 										<groupId>org.apache.maven.plugins</groupId>
 										<artifactId>maven-dependency-plugin</artifactId>
-										<versionRange>2.6</versionRange>
+
+										<versionRange>2.8</versionRange>
 										<goals>
 											<goal>copy-dependencies</goal>
 										</goals>
@@ -95,12 +96,11 @@
 		</pluginManagement>
 
 		<finalName></finalName>
-		<plugins>
-			
-
+		<!-- <plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.8</version>
 				<executions>
 					<execution>
 						<id>unpack</id>
@@ -124,6 +124,6 @@
 					</execution>
 				</executions>
 			</plugin>
-		</plugins>
+		</plugins> -->
 	</build>
 </project>
