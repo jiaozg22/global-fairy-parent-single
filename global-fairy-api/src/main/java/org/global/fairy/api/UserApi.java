@@ -1,16 +1,17 @@
 package org.global.fairy.api;
 
-import javax.annotation.Resource;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import javax.annotation.Resource;
+
 import org.global.fairy.modules.dao.User;
 import org.global.fairy.service.IUserService;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserApi {
-	private static final Logger logger = LogManager.getLogger();
+	private static final Logger logger = LogManager.getLogger(UserApi.class);
 	
 	@Resource
 	public IUserService userService;
