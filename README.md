@@ -3,7 +3,7 @@
 基于dubbo的微服务架构（A microservices framework based on dubbo）
 
 ## 一.环境配置 
-###. v1.0 版本配置
+###  v1.0 版本配置
 
 #### 安装软件及版本 （install softwares versions):
 
@@ -22,9 +22,6 @@ redis : Redis-x64-3.0.500
 spring framework :4.1.6
 
 ###  新版本
-基于dubbo的微服务架构（A microservices framework based on dubbo）
-
-
 #### 安装软件及版本 （install softwares versions):
 
 jdk-version ：jdk1.8
