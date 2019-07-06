@@ -28,11 +28,6 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.1.6.RELEASE</version>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-aop</artifactId>
-			<version>4.1.6.RELEASE</version>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.webflow</groupId>
@@ -76,15 +71,15 @@
 			<plugins>
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
-					<artifactId>tomcat7-maven-plugin</artifactId>
-					<version>2.1</version>
+					<artifactId>tomcat8-maven-plugin</artifactId>
+					<version>3.0-r1756463</version>
 					<configuration>
 						<port>8080</port>
 						<path>/global-fairy</path>
 						<uriEncoding>UTF-8</uriEncoding>
 						<finalName>global-fairy</finalName>
 						<url>http://localhost:8080/manager</url>
-						<server>tomcat7</server>
+						<server>tomcat8</server>
 						<username>admin</username>
 						<password>admin</password>
 					</configuration>
