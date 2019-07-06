@@ -1,10 +1,9 @@
 # global-fairy-parent-single
-
+# v1.0 版本配置 
 基于dubbo的微服务架构（A microservices framework based on dubbo）
 
 
-# 安装软件及版本 （install softwares versions):
-
+## 安装软件及版本 （install softwares versions):
 
 jdk-version ：jdk1.7.0_51
 
@@ -17,6 +16,29 @@ maven :　apache-maven-3.3.3
 activemq : apache-activemq-5.14.5
 
 redis : Redis-x64-3.0.500
+
+spring framework :4.1.6
+
+#  新版本
+基于dubbo的微服务架构（A microservices framework based on dubbo）
+
+
+## 安装软件及版本 （install softwares versions):
+
+jdk-version ：jdk1.8
+
+tomcat：apache-tomcat-8.5
+
+zookeeper：apache-zookeeper-3.4.8
+
+maven :　apache-maven-3.3.3
+
+activemq : apache-activemq-5.14.5
+
+redis : Redis-x64-3.0.500
+
+spring framework :5.2.0
+
 
 # 为了启用dubbo与zookeeper，请设置环境变量 (in order to start dubbo and zookeeper,please set environments)
 JAVA_HOME=JDK安装路径的环境变量值  ;(jdk environment)
