@@ -27,14 +27,14 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="annotationMethodHandlerAdapter"
+	<!--<bean id="annotationMethodHandlerAdapter"
 		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
 		<property name="messageConverters">
 			<list>
 				<ref bean="mappingJacksonHttpMessageConverter" />
 			</list>
 		</property>
-	</bean>
+	</bean>-->
 
 	<!-- ③：对模型视图名称的解析，即在模型视图名称添加前后缀 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
