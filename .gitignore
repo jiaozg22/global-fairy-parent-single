@@ -25,6 +25,7 @@
 *.zip  
 *.via
 *.tmp
+*.iml
 *.err 
 # OS generated files #  
 .DS_Store  
@@ -36,3 +37,5 @@ Icon?
 ehthumbs.db  
 Thumbs.db
 /bin/
+/.idea/
+/.myeclipse/*

@@ -20,7 +20,7 @@ public class UserApi {
 		logger.info("into api");
 		User user = new User();
 		
-		user.setId(10000);
+//		user.setId(10000);
 		user.setName(name);
 		userService.sayHello(user);
 	}
