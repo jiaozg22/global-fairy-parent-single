@@ -202,36 +202,39 @@
 		</dependency>
 
 		<!-- json -->
-		<dependency>
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.10.0.pr1</version>
+        </dependency>
+
+        <dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>2.5.3</version>
+			<version>2.10.0.pr1</version>
 		</dependency>
-		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.5.3</version>
-		</dependency>
+
 		<dependency>
 			<groupId>com.fasterxml.jackson.jr</groupId>
 			<artifactId>jackson-jr-all</artifactId>
-			<version>2.5.3</version>
+			<version>2.10.0.pr1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.5.3</version>
+			<version>2.10.0.pr1</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-lgpl</artifactId>
-			<version>1.8.1</version>
+			<version>1.9.13</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-lgpl</artifactId>
-			<version>1.8.1</version>
+			<version>1.9.13</version>
 		</dependency>
 		<!-- json结束 -->
 
@@ -276,13 +279,32 @@
 		</properties> </profile> <profile> 生产环境 <id>pro</id> <properties> <profiles.active>pro</profiles.active> 
 		</properties> </profile> </profiles> -->
 
+	<pluginRepositories>
+		<pluginRepository>
+			<id>alfresco-public</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>alfresco-public-snapshots</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+		</pluginRepository>
+		<pluginRepository>
+			<id>beardedgeeks-releases</id>
+			<url>http://beardedgeeks.googlecode.com/svn/repository/releases</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<build>
 		<!-- <resources> <resource> <directory>src/main/resources</directory> 资源根目录排除各环境的配置，防止在生成目录中多余其它目录 
 			<excludes> <exclude>test/*</exclude> <exclude>ci/*</exclude> <exclude>pro/*</exclude> 
 			<exclude>dev/*</exclude> </excludes> </resource> <resource> <directory>src/main/resources/${profiles.active}</directory> 
 			</resource> </resources> -->
 		<plugins>
-			<plugin>
+			<!--<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.1</version>
@@ -292,35 +314,35 @@
 					<uriEncoding>UTF-8</uriEncoding>
 					<finalName>global-fairy</finalName>
 					<url>http://localhost:8080/manager/text</url>
-					<server>tomcat8</server>
+					<server>tomcat7</server>
 					<username>admin</username>
 					<password>admin</password>
 				</configuration>
-			</plugin>
+			</plugin>-->
+
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-install-plugin</artifactId>
-				<version>2.5.2</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat8-maven-plugin</artifactId>
+				<version>3.0-r1655215</version>
 			</plugin>
 
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
 			<!-- 加载依赖模块的resources start -->
+			<!-- the Maven compiler plugin will compile Java source files -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
+				<version>3.0.2</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
@@ -328,20 +350,20 @@
 			<!-- 加载依赖模块的resources end -->
 		</plugins>
 
+
 		<pluginManagement>
 			<plugins>
-
 				<plugin>
 					<groupId>org.apache.tomcat.maven</groupId>
 					<artifactId>tomcat8-maven-plugin</artifactId>
-					<version>2.1</version>
+					<version>3.0-r1756463</version>
 					<configuration>
 						<port>8080</port>
 						<path>/global-fairy</path>
 						<uriEncoding>UTF-8</uriEncoding>
 						<finalName>global-fairy</finalName>
-						<url>http://localhost:8080/manager/text</url>
-						<server>tomcat8.5</server>
+						<url>http://localhost:8080/manager</url>
+						<server>tomcat8</server>
 						<username>admin</username>
 						<password>admin</password>
 					</configuration>
@@ -352,7 +374,7 @@
 
 	<modules>
 		<module>global-fairy-core</module>
-		<module>global-fairy-web Maven Webapp</module>
+		<module>global-fairy-web</module>
 		<!-- <module>global-fairy-doc</module> <module>global-fairy-doc-plugin</module> -->
 		<!-- <module>global.fairy.api</module> <module>global.fairy.provider</module> 
 			<module>global.fairy.consumer</module> -->
