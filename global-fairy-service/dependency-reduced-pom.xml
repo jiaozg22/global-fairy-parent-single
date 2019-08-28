@@ -11,6 +11,7 @@
   <name>global-fairy-service</name>
   <url>http://maven.apache.org</url>
   <build>
+    <finalName>global-fairy-service</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -24,7 +25,7 @@
                   <pluginExecutionFilter>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <versionRange>2.6</versionRange>
+                    <versionRange>2.8</versionRange>
                     <goals>
                       <goal>copy-dependencies</goal>
                     </goals>

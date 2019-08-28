@@ -374,7 +374,7 @@
 
 	<modules>
 		<module>global-fairy-core</module>
-		<module>global-fairy-web Maven Webapp</module>
+		<module>global-fairy-web</module>
 		<!-- <module>global-fairy-doc</module> <module>global-fairy-doc-plugin</module> -->
 		<!-- <module>global.fairy.api</module> <module>global.fairy.provider</module> 
 			<module>global.fairy.consumer</module> -->
