@@ -19,7 +19,7 @@
 	<insert id="insertUser" parameterType="org.global.fairy.modules.dao.User" useGeneratedKeys="true"
 		keyProperty="id">
 		<selectKey keyProperty="id" resultType="int" order="BEFORE">
-			select if(max(id) is null ,1,max(id) + 2) as newId from User
+			select if(max(id) is null ,1,max(id) + 2) from User
 		</selectKey>
 		insert into user(id,name) values(#{id},#{name})
 	</insert>
