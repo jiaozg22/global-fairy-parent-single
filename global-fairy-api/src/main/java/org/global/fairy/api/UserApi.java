@@ -2,12 +2,12 @@ package org.global.fairy.api;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import javax.annotation.Resource;
-
 import org.global.fairy.modules.dao.User;
 import org.global.fairy.service.IUserService;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 @Component
 public class UserApi {
@@ -25,10 +25,10 @@ public class UserApi {
 		userService.sayHello(user);
 	}
 	
-	public void addUser(User user) {
+	public boolean addUser(User user) {
 		logger.info("into api");
 		
-		userService.sayHello(user);
+		return  userService.sayHello(user);
 	}
 
 	public void registor(String string) {
@@ -36,5 +36,8 @@ public class UserApi {
 		
 	}
 
-	
+	public List<User> queryList(User user){
+
+		return userService.queryList(user);
+	}
 }

@@ -6,7 +6,10 @@
 
 	<sql id="user">
 		id,
-		name
+		name,
+		password,
+		logcounts,
+		roleId
 	</sql>
 	<!-- 查询语句 -->
 	<select id="getUser" resultType="org.global.fairy.modules.dao.User">

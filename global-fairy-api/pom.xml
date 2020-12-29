@@ -28,5 +28,11 @@
 			<artifactId>global-fairy-service</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.global.fairy</groupId>
+			<artifactId>global-fairy-pi-service</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 </project>

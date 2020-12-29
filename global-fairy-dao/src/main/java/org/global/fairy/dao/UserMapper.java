@@ -4,13 +4,21 @@ import org.global.fairy.modules.dao.User;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface UserMapper {
 
-	public User getUser();
+	User getUser();
 
-	public int insertUser(User user);
+	int insertUser(User user);
 
-	public int deleteUser(long id);
+	int deleteUser(long id);
 
+	/**
+	 * @Autor   jiaozg
+	 * @param
+	 * @return
+	 */
+	List<User> queryList(User user);
 }

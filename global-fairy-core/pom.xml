@@ -35,9 +35,9 @@
 			<artifactId>global-fairy-resources</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
 	</dependencies>
 	
-
 	<!-- 加载依赖模块的resources start -->
 	<build>
 

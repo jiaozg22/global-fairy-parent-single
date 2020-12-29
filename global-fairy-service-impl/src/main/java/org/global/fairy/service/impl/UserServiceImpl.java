@@ -8,6 +8,12 @@ import org.global.fairy.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+/**
+ * @Autor jiao_zg22
+ * @Date 2019-08-29 23:11:00
+ */
 @Service("userService")
 public class UserServiceImpl implements IUserService{
 	private static final Logger logger = LogManager.getLogger();
@@ -16,12 +22,14 @@ public class UserServiceImpl implements IUserService{
 	private UserMapper userMapper;
 
 	@Override
-	public void sayHello(User user) {
-		
-		logger.info("into service");
-		
-		userMapper.insertUser(user);
-		
+	public boolean sayHello(User user) {
+		return userMapper.insertUser(user) > 0 ? true : false;
 	}
+
+	@Override
+	public List<User> queryList(User user) {
+		return userMapper.queryList(user);
+	}
+
 
 }

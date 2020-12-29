@@ -20,6 +20,21 @@ public class User implements Serializable{
 	 */
 	private String name;
 
+	/**
+	 * 密码
+	 */
+	private String password;
+
+	/**
+	 * 登录次数
+	 */
+	private Integer logcounts;
+
+	/**
+	 * 权限id
+	 */
+	private Integer roleId;
+
 	public long getId() {
 		return id;
 	}
@@ -36,5 +51,7 @@ public class User implements Serializable{
 		this.name = name;
 	}
 
-	
+	public static long getSerialVersionUID() {
+		return serialVersionUID;
+	}
 }

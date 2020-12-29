@@ -71,6 +71,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
+
 	</dependencies>
 	<build>
 		<finalName>global-fairy-web</finalName>

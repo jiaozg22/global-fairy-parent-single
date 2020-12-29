@@ -15,7 +15,14 @@
 	<!-- 启用spring mvc 注解 -->
 	<context:annotation-config />
 
-
+	<!--设置跨域请求-->
+	<mvc:cors>
+		<mvc:mapping path="/**/**"
+					 allowed-origins="*"
+					 allowed-methods="POST, GET, OPTIONS, DELETE, PUT"
+					 allowed-headers="Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+					 allow-credentials="true" />
+	</mvc:cors>
 	<context:component-scan base-package="org.global.fairy.web"></context:component-scan>
 	<!-- ②：启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
 	<!--<bean
